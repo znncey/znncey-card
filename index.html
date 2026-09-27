@@ -3,199 +3,220 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Сейдамет Исмаилов — CEO</title>
-
+  <title>Сейдамет Исмаилов</title>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     body {
       min-height: 100vh;
-      background: #050505;
-      color: #ffffff;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 50% 18%, #0b2948 0%, #06101c 25%, #020408 58%, #010101 100%);
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 24px;
+      overflow: hidden;
     }
-
-    .card {
-      width: 100%;
-      max-width: 430px;
-      min-height: 700px;
-      background: linear-gradient(145deg, #111111, #050505);
-      border: 1px solid #292929;
-      border-radius: 28px;
-      padding: 42px 26px 30px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.7);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    body::before {
+      content: "";
+      position: fixed;
+      width: 320px;
+      height: 320px;
+      top: -120px;
+      right: -100px;
+      border-radius: 50%;
+      border: 1px solid rgba(54, 145, 230, 0.12);
+      box-shadow:
+        0 0 100px rgba(25, 115, 200, 0.08);
     }
-
-    .top {
+    .container {
+      width: 90%;
+      max-width: 420px;
       text-align: center;
+      padding: 35px 0;
     }
-
+    /* Главная эмблема */
     .logo {
-      width: 88px;
-      height: 88px;
-      margin: 0 auto 28px;
-      border: 1px solid #444;
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 24px;
+      border: 1px solid #2778b8;
       border-radius: 50%;
       display: flex;
-      align-items: center;
       justify-content: center;
-      font-size: 25px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      background: #0b0b0b;
+      align-items: center;
+      position: relative;
+      background: rgba(3, 15, 27, 0.7);
+      box-shadow:
+        0 0 30px rgba(30, 125, 210, 0.18),
+        inset 0 0 25px rgba(30, 125, 210, 0.06);
     }
-
-    h1 {
-      font-size: 30px;
-      font-weight: 600;
-      letter-spacing: -0.5px;
-      margin-bottom: 9px;
+    .logo::before {
+      content: "";
+      position: absolute;
+      width: 78px;
+      height: 78px;
+      border: 1px solid #153b5d;
+      border-radius: 50%;
     }
-
-    .position {
-      color: #8f8f8f;
-      font-size: 15px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
+    /* Силуэт летучей мыши */
+    .bat {
+      position: relative;
+      width: 52px;
+      height: 28px;
+      background: #d9efff;
+      clip-path: polygon(
+        0% 28%,
+        18% 42%,
+        28% 8%,
+        40% 28%,
+        50% 0%,
+        60% 28%,
+        72% 8%,
+        82% 42%,
+        100% 28%,
+        91% 62%,
+        72% 82%,
+        58% 66%,
+        50% 100%,
+        42% 66%,
+        28% 82%,
+        9% 62%
+      );
+      filter: drop-shadow(0 0 8px rgba(80, 175, 255, 0.45));
     }
-
-    .line {
+    .mini-line {
       width: 55px;
       height: 1px;
-      background: #555;
-      margin: 30px auto;
+      margin: 0 auto 19px;
+      background: #318bd0;
+      box-shadow: 0 0 12px rgba(50, 145, 220, 0.55);
     }
-
-    .buttons {
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      margin-bottom: 9px;
+    }
+    .subtitle {
+      color: #6995ba;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 38px;
+    }
+    .links {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-    }
-
-    .button {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      text-decoration: none;
-      color: white;
-      background: #111;
-      border: 1px solid #303030;
-      border-radius: 15px;
-      padding: 17px 19px;
-      transition: 0.2s;
-    }
-
-    .button:hover {
-      background: #1c1c1c;
-      transform: translateY(-1px);
-    }
-
-    .left {
-      display: flex;
-      align-items: center;
       gap: 13px;
     }
-
+    .link {
+      height: 61px;
+      border: 1px solid #17324b;
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      padding: 0 19px;
+      text-decoration: none;
+      color: #fff;
+      background: rgba(4, 12, 21, 0.86);
+      transition: all 0.25s ease;
+      box-shadow:
+        0 8px 28px rgba(0, 0, 0, 0.35);
+    }
+    .link:hover {
+      transform: translateY(-2px);
+      border-color: #2c82c7;
+      background: rgba(7, 23, 38, 0.96);
+      box-shadow:
+        0 10px 32px rgba(30, 125, 210, 0.15);
+    }
     .icon {
-      width: 25px;
+      width: 30px;
+      color: #62b5f3;
+      font-size: 19px;
       text-align: center;
+      text-shadow: 0 0 10px rgba(70, 165, 240, 0.4);
+    }
+    .text {
+      flex: 1;
+      text-align: center;
+      margin-right: 30px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: #eaf6ff;
+    }
+    .arrow {
+      color: #376d99;
       font-size: 19px;
     }
-
-    .label {
-      font-size: 16px;
-      font-weight: 500;
-    }
-
-    .arrow {
-      color: #777;
-      font-size: 18px;
-    }
-
     .footer {
-      text-align: center;
-      margin-top: 35px;
-      color: #555;
-      font-size: 12px;
-      letter-spacing: 1px;
+      margin-top: 36px;
+      color: #284966;
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
     }
-
-    .name-small {
-      color: #777;
-      margin-bottom: 8px;
+    /* Декоративные точки */
+    .dot {
+      position: fixed;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: #4ca9ed;
+      opacity: 0.35;
+      box-shadow: 0 0 8px #318bd0;
     }
+    .d1 { top: 13%; left: 14%; }
+    .d2 { top: 31%; right: 12%; }
+    .d3 { bottom: 18%; left: 11%; }
+    .d4 { bottom: 27%; right: 16%; }
   </style>
 </head>
-
 <body>
-
-  <div class="card">
-
-    <div class="top">
-
-      <div class="logo">SI</div>
-
-      <h1>Сейдамет Исмаилов</h1>
-
-      <div class="position">CEO</div>
-
-      <div class="line"></div>
-
+  <div class="dot d1"></div>
+  <div class="dot d2"></div>
+  <div class="dot d3"></div>
+  <div class="dot d4"></div>
+  <main class="container">
+    <div class="logo">
+      <div class="bat"></div>
     </div>
-
-    <div class="buttons">
-
-      <!-- Instagram -->
-      <a class="button"
+    <div class="mini-line"></div>
+    <h1>Сейдамет Исмаилов</h1>
+    <div class="subtitle">
+      Personal Identity
+    </div>
+    <div class="links">
+      <a class="link"
          href="https://instagram.com/znncey"
          target="_blank">
-        <div class="left">
-          <div class="icon">◎</div>
-          <div class="label">@znncey</div>
-        </div>
+        <div class="icon">◎</div>
+        <div class="text">Instagram</div>
         <div class="arrow">›</div>
       </a>
-
-      <!-- Telegram -->
-      <a class="button"
+      <a class="link"
          href="https://t.me/znncey"
          target="_blank">
-        <div class="left">
-          <div class="icon">➤</div>
-          <div class="label">t.me/znncey</div>
-        </div>
+        <div class="icon">✈</div>
+        <div class="text">Telegram</div>
         <div class="arrow">›</div>
       </a>
-
-      <!-- Phone -->
-      <a class="button"
+      <a class="link"
          href="tel:+998200022252">
-        <div class="left">
-          <div class="icon">⌕</div>
-          <div class="label">+998 20 002 22 52</div>
-        </div>
+        <div class="icon">☎</div>
+        <div class="text">+998 20 002 22 52</div>
         <div class="arrow">›</div>
       </a>
-
     </div>
-
     <div class="footer">
-      <div class="name-small">SEYDA ISMAILOV</div>
-      DIGITAL BUSINESS CARD
+      Digital Identity
     </div>
-
-  </div>
-
+  </main>
 </body>
 </html>
