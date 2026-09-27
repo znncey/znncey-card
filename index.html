@@ -13,98 +13,42 @@
     body {
       min-height: 100vh;
       background:
-        radial-gradient(circle at 50% 18%, #0b2948 0%, #06101c 25%, #020408 58%, #010101 100%);
+        radial-gradient(circle at 50% 15%, #24113d 0%, #0d0715 30%, #030305 70%);
       color: #fff;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      width: 320px;
-      height: 320px;
-      top: -120px;
-      right: -100px;
-      border-radius: 50%;
-      border: 1px solid rgba(54, 145, 230, 0.12);
-      box-shadow:
-        0 0 100px rgba(25, 115, 200, 0.08);
     }
     .container {
       width: 90%;
       max-width: 420px;
       text-align: center;
-      padding: 35px 0;
     }
-    /* Главная эмблема */
-    .logo {
-      width: 96px;
-      height: 96px;
-      margin: 0 auto 24px;
-      border: 1px solid #2778b8;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      background: rgba(3, 15, 27, 0.7);
-      box-shadow:
-        0 0 30px rgba(30, 125, 210, 0.18),
-        inset 0 0 25px rgba(30, 125, 210, 0.06);
-    }
-    .logo::before {
-      content: "";
-      position: absolute;
-      width: 78px;
-      height: 78px;
-      border: 1px solid #153b5d;
-      border-radius: 50%;
-    }
-    /* Силуэт летучей мыши */
-    .bat {
-      position: relative;
-      width: 52px;
-      height: 28px;
-      background: #d9efff;
-      clip-path: polygon(
-        0% 28%,
-        18% 42%,
-        28% 8%,
-        40% 28%,
-        50% 0%,
-        60% 28%,
-        72% 8%,
-        82% 42%,
-        100% 28%,
-        91% 62%,
-        72% 82%,
-        58% 66%,
-        50% 100%,
-        42% 66%,
-        28% 82%,
-        9% 62%
-      );
-      filter: drop-shadow(0 0 8px rgba(80, 175, 255, 0.45));
-    }
-    .mini-line {
-      width: 55px;
-      height: 1px;
-      margin: 0 auto 19px;
-      background: #318bd0;
-      box-shadow: 0 0 12px rgba(50, 145, 220, 0.55);
+    .ceo {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 6px;
+      color: #b77cff;
+      margin-bottom: 16px;
+      text-shadow: 0 0 18px rgba(170, 90, 255, 0.35);
     }
     h1 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 28px;
+      font-size: 29px;
       font-weight: 400;
       letter-spacing: 2px;
-      margin-bottom: 9px;
+      margin-bottom: 12px;
+    }
+    .line {
+      width: 45px;
+      height: 1px;
+      background: #9b4dff;
+      margin: 0 auto 15px;
+      box-shadow: 0 0 12px rgba(155, 77, 255, 0.55);
     }
     .subtitle {
-      color: #6995ba;
+      color: #806a94;
       font-size: 10px;
       letter-spacing: 4px;
       text-transform: uppercase;
@@ -116,32 +60,28 @@
       gap: 13px;
     }
     .link {
-      height: 61px;
-      border: 1px solid #17324b;
+      height: 60px;
+      border: 1px solid #291a38;
       border-radius: 13px;
       display: flex;
       align-items: center;
-      padding: 0 19px;
+      padding: 0 20px;
       text-decoration: none;
       color: #fff;
-      background: rgba(4, 12, 21, 0.86);
+      background: rgba(12, 8, 17, 0.88);
       transition: all 0.25s ease;
-      box-shadow:
-        0 8px 28px rgba(0, 0, 0, 0.35);
     }
     .link:hover {
       transform: translateY(-2px);
-      border-color: #2c82c7;
-      background: rgba(7, 23, 38, 0.96);
-      box-shadow:
-        0 10px 32px rgba(30, 125, 210, 0.15);
+      border-color: #8f45dc;
+      background: rgba(27, 13, 39, 0.95);
+      box-shadow: 0 8px 28px rgba(145, 65, 220, 0.15);
     }
     .icon {
       width: 30px;
-      color: #62b5f3;
       font-size: 19px;
-      text-align: center;
-      text-shadow: 0 0 10px rgba(70, 165, 240, 0.4);
+      color: #b66cff;
+      text-shadow: 0 0 10px rgba(175, 90, 255, 0.35);
     }
     .text {
       flex: 1;
@@ -149,48 +89,28 @@
       margin-right: 30px;
       font-size: 14px;
       letter-spacing: 1px;
-      color: #eaf6ff;
+      color: #eee7f5;
     }
     .arrow {
-      color: #376d99;
-      font-size: 19px;
+      color: #71458f;
+      font-size: 18px;
     }
     .footer {
-      margin-top: 36px;
-      color: #284966;
+      margin-top: 35px;
+      color: #382544;
       font-size: 9px;
       letter-spacing: 4px;
       text-transform: uppercase;
     }
-    /* Декоративные точки */
-    .dot {
-      position: fixed;
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      background: #4ca9ed;
-      opacity: 0.35;
-      box-shadow: 0 0 8px #318bd0;
-    }
-    .d1 { top: 13%; left: 14%; }
-    .d2 { top: 31%; right: 12%; }
-    .d3 { bottom: 18%; left: 11%; }
-    .d4 { bottom: 27%; right: 16%; }
   </style>
 </head>
 <body>
-  <div class="dot d1"></div>
-  <div class="dot d2"></div>
-  <div class="dot d3"></div>
-  <div class="dot d4"></div>
   <main class="container">
-    <div class="logo">
-      <div class="bat"></div>
-    </div>
-    <div class="mini-line"></div>
+    <div class="ceo">CEO</div>
     <h1>Сейдамет Исмаилов</h1>
+    <div class="line"></div>
     <div class="subtitle">
-      Personal Identity
+      Personal Card
     </div>
     <div class="links">
       <a class="link"
@@ -215,7 +135,7 @@
       </a>
     </div>
     <div class="footer">
-      Digital Identity
+      Digital Card
     </div>
   </main>
 </body>
