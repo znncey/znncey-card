@@ -12,130 +12,183 @@
     }
     body {
       min-height: 100vh;
-      background:
-        radial-gradient(circle at 50% 15%, #24113d 0%, #0d0715 30%, #030305 70%);
-      color: #fff;
+      background: #050505;
+      color: #f5f5f5;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
     }
-    .container {
+    /* Мягкое фиолетовое свечение */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      top: -240px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #6d28d9;
+      opacity: 0.10;
+      filter: blur(130px);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .card {
       width: 90%;
-      max-width: 420px;
-      text-align: center;
+      max-width: 430px;
+      position: relative;
     }
-    .ceo {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 6px;
-      color: #b77cff;
-      margin-bottom: 16px;
-      text-shadow: 0 0 18px rgba(170, 90, 255, 0.35);
+    /* Верхняя часть */
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 70px;
+    }
+    .brand {
+      font-size: 11px;
+      letter-spacing: 5px;
+      color: #8f8f8f;
+    }
+    .number {
+      font-size: 10px;
+      color: #444;
+      letter-spacing: 2px;
+    }
+    /* Главный блок */
+    .hero {
+      margin-bottom: 55px;
+    }
+    .role {
+      font-size: 12px;
+      letter-spacing: 8px;
+      color: #a970ff;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      text-shadow: 0 0 20px rgba(160, 90, 255, 0.35);
     }
     h1 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 29px;
+      font-size: 42px;
       font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -1px;
+      margin-bottom: 22px;
+    }
+    .description {
+      color: #6f6f6f;
+      font-size: 12px;
       letter-spacing: 2px;
-      margin-bottom: 12px;
+      line-height: 1.8;
     }
-    .line {
-      width: 45px;
+    /* Фиолетовый акцент */
+    .accent {
+      width: 42px;
       height: 1px;
-      background: #9b4dff;
-      margin: 0 auto 15px;
-      box-shadow: 0 0 12px rgba(155, 77, 255, 0.55);
+      background: #8b5cf6;
+      margin-top: 28px;
+      box-shadow: 0 0 14px rgba(139, 92, 246, 0.65);
     }
-    .subtitle {
-      color: #806a94;
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 38px;
+    /* Контакты */
+    .contacts {
+      border-top: 1px solid #191919;
     }
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 13px;
-    }
-    .link {
-      height: 60px;
-      border: 1px solid #291a38;
-      border-radius: 13px;
+    .contact {
+      height: 65px;
+      border-bottom: 1px solid #191919;
       display: flex;
       align-items: center;
-      padding: 0 20px;
       text-decoration: none;
       color: #fff;
-      background: rgba(12, 8, 17, 0.88);
-      transition: all 0.25s ease;
+      transition: 0.25s ease;
     }
-    .link:hover {
-      transform: translateY(-2px);
-      border-color: #8f45dc;
-      background: rgba(27, 13, 39, 0.95);
-      box-shadow: 0 8px 28px rgba(145, 65, 220, 0.15);
+    .contact:hover {
+      padding-left: 8px;
+      border-color: #39205a;
     }
-    .icon {
-      width: 30px;
-      font-size: 19px;
-      color: #b66cff;
-      text-shadow: 0 0 10px rgba(175, 90, 255, 0.35);
+    .symbol {
+      width: 35px;
+      color: #9b6cff;
+      font-size: 16px;
     }
-    .text {
+    .name {
       flex: 1;
-      text-align: center;
-      margin-right: 30px;
-      font-size: 14px;
-      letter-spacing: 1px;
-      color: #eee7f5;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      color: #d8d8d8;
+    }
+    .value {
+      font-size: 11px;
+      color: #555;
+      letter-spacing: 0.5px;
     }
     .arrow {
-      color: #71458f;
-      font-size: 18px;
+      margin-left: 14px;
+      color: #7148a5;
+      font-size: 17px;
     }
-    .footer {
-      margin-top: 35px;
-      color: #382544;
-      font-size: 9px;
-      letter-spacing: 4px;
+    /* Низ */
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 38px;
+    }
+    .bottom span {
+      font-size: 8px;
+      letter-spacing: 3px;
+      color: #303030;
       text-transform: uppercase;
     }
   </style>
 </head>
 <body>
-  <main class="container">
-    <div class="ceo">CEO</div>
-    <h1>Сейдамет Исмаилов</h1>
-    <div class="line"></div>
-    <div class="subtitle">
-      Personal Card
+  <main class="card">
+    <div class="top">
+      <div class="brand">ZN NCEY</div>
+      <div class="number">01 / 01</div>
     </div>
-    <div class="links">
-      <a class="link"
+    <section class="hero">
+      <div class="role">CEO</div>
+      <h1>
+        Сейдамет<br>
+        Исмаилов
+      </h1>
+      <div class="description">
+        PERSONAL IDENTITY<br>
+        DIGITAL BUSINESS CARD
+      </div>
+      <div class="accent"></div>
+    </section>
+    <section class="contacts">
+      <a class="contact"
          href="https://instagram.com/znncey"
          target="_blank">
-        <div class="icon">◎</div>
-        <div class="text">Instagram</div>
+        <div class="symbol">◎</div>
+        <div class="name">Instagram</div>
+        <div class="value">@znncey</div>
         <div class="arrow">›</div>
       </a>
-      <a class="link"
+      <a class="contact"
          href="https://t.me/znncey"
          target="_blank">
-        <div class="icon">✈</div>
-        <div class="text">Telegram</div>
+        <div class="symbol">↗</div>
+        <div class="name">Telegram</div>
+        <div class="value">@znncey</div>
         <div class="arrow">›</div>
       </a>
-      <a class="link"
+      <a class="contact"
          href="tel:+998200022252">
-        <div class="icon">☎</div>
-        <div class="text">+998 20 002 22 52</div>
+        <div class="symbol">＋</div>
+        <div class="name">Phone</div>
+        <div class="value">+998 20 002 22 52</div>
         <div class="arrow">›</div>
       </a>
-    </div>
-    <div class="footer">
-      Digital Card
+    </section>
+    <div class="bottom">
+      <span>Digital Card</span>
+      <span>2026</span>
     </div>
   </main>
 </body>
