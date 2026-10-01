@@ -1,338 +1,316 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CEO — Сейдамет Исмаилов</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 50% 0%, #3b176d 0%, #160b29 38%, #08050d 75%);
-      color: white;
-      display: flex;
-      justify-content: center;
-      padding: 35px 18px;
-    }
-    .container {
-      width: 100%;
-      max-width: 430px;
-      text-align: center;
-    }
-    .logo {
-      width: 72px;
-      height: 72px;
-      margin: 10px auto 20px;
-      border-radius: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(145deg, #9b5cff, #4d188c);
-      box-shadow:
-        0 0 35px rgba(155, 92, 255, 0.35),
-        inset 0 1px 1px rgba(255,255,255,0.25);
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
-    h1 {
-      font-size: 30px;
-      font-weight: 700;
-      letter-spacing: 4px;
-      margin-bottom: 6px;
-    }
-    .name {
-      color: #bfa9d9;
-      font-size: 15px;
-      margin-bottom: 30px;
-    }
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .link {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 58px;
-      padding: 15px 20px;
-      color: white;
-      text-decoration: none;
-      background: rgba(255,255,255,0.055);
-      border: 1px solid rgba(190,150,255,0.16);
-      border-radius: 17px;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      transition: 0.25s ease;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.18);
-    }
-    .link:hover {
-      transform: translateY(-2px);
-      border-color: rgba(177,111,255,0.5);
-      background: rgba(145,78,220,0.13);
-    }
-    .icon {
-      position: absolute;
-      left: 22px;
-      font-size: 20px;
-    }
-    .link-text {
-      font-size: 15px;
-      font-weight: 500;
-    }
-    /* LIVE BALANCE */
-    .balance-card {
-      margin-top: 18px;
-      padding: 22px;
-      border-radius: 22px;
-      background:
-        linear-gradient(
-          145deg,
-          rgba(146, 75, 220, 0.20),
-          rgba(255,255,255,0.045)
-        );
-      border: 1px solid rgba(190,150,255,0.22);
-      box-shadow:
-        0 15px 45px rgba(0,0,0,0.25),
-        inset 0 1px 1px rgba(255,255,255,0.08);
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
-    .balance-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(180,120,255,0.5);
-    }
-    .balance-title {
-      color: #bfa9d9;
-      font-size: 12px;
-      letter-spacing: 2px;
-      margin-bottom: 8px;
-    }
-    .balance {
-      font-size: 34px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-    .change {
-      margin-top: 6px;
-      font-size: 13px;
-      color: #b98cff;
-    }
-    .chart {
-      height: 95px;
-      margin-top: 18px;
-      position: relative;
-      overflow: hidden;
-    }
-    .chart svg {
-      width: 100%;
-      height: 100%;
-      overflow: visible;
-    }
-    .chart-line {
-      fill: none;
-      stroke: #a96cff;
-      stroke-width: 2.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      filter:
-        drop-shadow(0 0 6px rgba(169,108,255,0.55));
-    }
-    .chart-area {
-      fill: url(#gradient);
-      opacity: 0.25;
-    }
-    .dot {
-      fill: #d5b5ff;
-      filter:
-        drop-shadow(0 0 7px rgba(190,140,255,0.9));
-    }
-    .hint {
-      margin-top: 10px;
-      color: #8f7ba4;
-      font-size: 11px;
-    }
-    .footer {
-      margin-top: 30px;
-      color: #6e617b;
-      font-size: 11px;
-      letter-spacing: 1px;
-    }
-    @media (max-width: 380px) {
-      h1 {
-        font-size: 27px;
-      }
-      .balance {
-        font-size: 30px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEO — Сейдамет Исмаилов</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: white;
+  background: #08050d;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 100%;
+  max-width: 420px;
+  padding: 45px 20px 30px;
+  text-align: center;
+}
+/* LOGO */
+.logo {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #9b5cff, #4d188c);
+  box-shadow:
+    0 0 30px rgba(155, 92, 255, 0.25),
+    inset 0 1px 1px rgba(255,255,255,0.2);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+h1 {
+  margin: 0;
+  font-size: 29px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+.name {
+  margin-top: 7px;
+  margin-bottom: 28px;
+  color: #bda9d2;
+  font-size: 15px;
+}
+/* BUTTONS */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 57px;
+  text-decoration: none;
+  color: white;
+  background: rgba(255,255,255,0.055);
+  border: 1px solid rgba(190,150,255,0.15);
+  border-radius: 17px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: .25s ease;
+}
+.link:hover {
+  transform: translateY(-2px);
+  background: rgba(145,78,220,0.12);
+  border-color: rgba(177,111,255,0.4);
+}
+.icon {
+  position: absolute;
+  left: 20px;
+  font-size: 20px;
+}
+.link-text {
+  font-size: 15px;
+  font-weight: 500;
+}
+/* LIVE BALANCE */
+.balance-card {
+  margin-top: 12px;
+  padding: 20px 18px 17px;
+  background: rgba(255,255,255,0.055);
+  border: 1px solid rgba(190,150,255,0.15);
+  border-radius: 17px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: .25s ease;
+}
+.balance-card:hover {
+  transform: translateY(-2px);
+  background: rgba(145,78,220,0.12);
+  border-color: rgba(177,111,255,0.4);
+}
+.balance-title {
+  color: #bda9d2;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+.balance {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+.change {
+  margin-top: 4px;
+  color: #b98cff;
+  font-size: 12px;
+}
+/* GRAPH */
+.chart {
+  height: 75px;
+  margin-top: 13px;
+}
+.chart svg {
+  width: 100%;
+  height: 100%;
+}
+.chart-line {
+  fill: none;
+  stroke: #a96cff;
+  stroke-width: 2.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 5px rgba(169,108,255,.5));
+}
+.chart-area {
+  fill: url(#gradient);
+  opacity: .18;
+}
+.dot {
+  fill: #d8baff;
+  filter: drop-shadow(0 0 6px rgba(190,140,255,.8));
+}
+.hint {
+  margin-top: 4px;
+  color: #81718f;
+  font-size: 10px;
+}
+/* FOOTER */
+.footer {
+  margin-top: 27px;
+  color: #65596f;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <!-- CEO -->
-    <div class="logo">CEO</div>
-    <h1>CEO</h1>
-    <div class="name">
-      Сейдамет Исмаилов
-    </div>
-    <!-- CONTACTS -->
-    <div class="links">
-      <a
-        class="link"
-        href="https://instagram.com/znncey"
-        target="_blank"
-      >
-        <span class="icon">◎</span>
-        <span class="link-text">Instagram</span>
-      </a>
-      <a
-        class="link"
-        href="https://t.me/znncey"
-        target="_blank"
-      >
-        <span class="icon">✈</span>
-        <span class="link-text">Telegram</span>
-      </a>
-      <a
-        class="link"
-        href="tel:+998200022252"
-      >
-        <span class="icon">⌕</span>
-        <span class="link-text">
-          +998 20 002 22 52
-        </span>
-      </a>
-    </div>
-    <!-- LIVE BALANCE -->
-    <div
-      class="balance-card"
-      onclick="updateBalance()"
+<div class="container">
+  <div class="logo">CEO</div>
+  <h1>CEO</h1>
+  <div class="name">
+    Сейдамет Исмаилов
+  </div>
+  <div class="links">
+    <a
+      class="link"
+      href="https://instagram.com/znncey"
+      target="_blank"
     >
-      <div class="balance-title">
-        LIVE BALANCE
-      </div>
-      <div
-        class="balance"
-        id="balance"
-      >
-        $97.00
-      </div>
-      <div
-        class="change"
-        id="change"
-      >
-        + $0.00 today
-      </div>
-      <!-- GRAPH -->
-      <div class="chart">
-        <svg
-          viewBox="0 0 360 100"
-          preserveAspectRatio="none"
-        >
-          <defs>
-            <linearGradient
-              id="gradient"
-              x1="0"
-              y1="0"
-              x2="0"
-              y2="1"
-            >
-              <stop
-                offset="0%"
-                stop-color="#a96cff"
-              />
-              <stop
-                offset="100%"
-                stop-color="#a96cff"
-                stop-opacity="0"
-              />
-            </linearGradient>
-          </defs>
-          <path
-            class="chart-area"
-            d="
-              M0,72
-              L30,65
-              L60,70
-              L90,48
-              L120,55
-              L150,42
-              L180,50
-              L210,31
-              L240,38
-              L270,25
-              L300,35
-              L330,18
-              L360,27
-              L360,100
-              L0,100
-              Z
-            "
-          />
-          <path
-            class="chart-line"
-            d="
-              M0,72
-              L30,65
-              L60,70
-              L90,48
-              L120,55
-              L150,42
-              L180,50
-              L210,31
-              L240,38
-              L270,25
-              L300,35
-              L330,18
-              L360,27
-            "
-          />
-          <circle
-            class="dot"
-            cx="360"
-            cy="27"
-            r="4"
-          />
-        </svg>
-      </div>
-      <div class="hint">
-        Tap to update
-      </div>
+      <span class="icon">◎</span>
+      <span class="link-text">Instagram</span>
+    </a>
+    <a
+      class="link"
+      href="https://t.me/znncey"
+      target="_blank"
+    >
+      <span class="icon">✈</span>
+      <span class="link-text">Telegram</span>
+    </a>
+    <a
+      class="link"
+      href="tel:+998200022252"
+    >
+      <span class="icon">⌕</span>
+      <span class="link-text">+998 20 002 22 52</span>
+    </a>
+  </div>
+  <!-- LIVE BALANCE -->
+  <div
+    class="balance-card"
+    onclick="updateBalance()"
+  >
+    <div class="balance-title">
+      LIVE BALANCE
     </div>
-    <div class="footer">
-      DIGITAL IDENTITY
+    <div
+      class="balance"
+      id="balance"
+    >
+      $97.00
+    </div>
+    <div
+      class="change"
+      id="change"
+    >
+      + $0.00 today
+    </div>
+    <div class="chart">
+      <svg
+        viewBox="0 0 360 90"
+        preserveAspectRatio="none"
+      >
+        <defs>
+          <linearGradient
+            id="gradient"
+            x1="0"
+            y1="0"
+            x2="0"
+            y2="1"
+          >
+            <stop
+              offset="0%"
+              stop-color="#a96cff"
+            />
+            <stop
+              offset="100%"
+              stop-color="#a96cff"
+              stop-opacity="0"
+            />
+          </linearGradient>
+        </defs>
+        <path
+          class="chart-area"
+          d="
+          M0 65
+          L30 58
+          L60 63
+          L90 43
+          L120 50
+          L150 37
+          L180 45
+          L210 27
+          L240 34
+          L270 21
+          L300 30
+          L330 14
+          L360 23
+          L360 90
+          L0 90
+          Z
+          "
+        />
+        <path
+          class="chart-line"
+          d="
+          M0 65
+          L30 58
+          L60 63
+          L90 43
+          L120 50
+          L150 37
+          L180 45
+          L210 27
+          L240 34
+          L270 21
+          L300 30
+          L330 14
+          L360 23
+          "
+        />
+        <circle
+          class="dot"
+          cx="360"
+          cy="23"
+          r="3.5"
+        />
+      </svg>
+    </div>
+    <div class="hint">
+      Tap to update
     </div>
   </div>
-  <script>
-    let balance = 97.00;
-    function updateBalance() {
-      const movement =
-        Math.random() * 16 - 8;
-      balance += movement;
-      if (balance < 80) {
-        balance = 80;
-      }
-      if (balance > 120) {
-        balance = 120;
-      }
-      document.getElementById("balance").textContent =
-        "$" + balance.toFixed(2);
-      const changeText =
-        movement >= 0
-          ? "+ $" + movement.toFixed(2) + " today"
-          : "- $" + Math.abs(movement).toFixed(2) + " today";
-      document.getElementById("change").textContent =
-        changeText;
-    }
-  </script>
+  <div class="footer">
+    DIGITAL IDENTITY
+  </div>
+</div>
+<script>
+let balance = 97.00;
+function updateBalance() {
+  const movement = Math.random() * 16 - 8;
+  balance += movement;
+  if (balance < 80) {
+    balance = 80;
+  }
+  if (balance > 120) {
+    balance = 120;
+  }
+  document.getElementById("balance").textContent =
+    "$" + balance.toFixed(2);
+  if (movement >= 0) {
+    document.getElementById("change").textContent =
+      "+ $" + movement.toFixed(2) + " today";
+  } else {
+    document.getElementById("change").textContent =
+      "- $" + Math.abs(movement).toFixed(2) + " today";
+  }
+}
+</script>
 </body>
 </html>
