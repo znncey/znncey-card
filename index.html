@@ -367,3 +367,124 @@
   document.querySelector(".live-balance")
     .addEventListener("click", openChart);
 </script>
+<!-- График DEMO BALANCE -->
+<div id="balanceChart" class="balance-chart">
+  <div class="chart-top">
+    <span>DEMO BALANCE</span>
+    <button onclick="closeBalanceChart()">×</button>
+  </div>
+  <div class="chart-value" id="chartValue">$247.38</div>
+  <div class="chart-area">
+    <svg viewBox="0 0 360 120" preserveAspectRatio="none">
+      <polyline
+        id="chartLine"
+        points="0,85 30,70 60,78 90,48 120,60 150,35 180,50 210,25 240,42 270,30 300,45 330,20 360,32"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </div>
+  <div class="chart-bottom">
+    <span>1H</span>
+    <span>4H</span>
+    <span>1D</span>
+  </div>
+</div>
+<style>
+  .balance-chart {
+    display: none;
+    position: fixed;
+    left: 50%;
+    bottom: 25px;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 380px;
+    padding: 16px;
+    border-radius: 18px;
+    background: #101014;
+    border: 1px solid rgba(255,255,255,.10);
+    box-shadow: 0 20px 60px rgba(0,0,0,.55);
+    z-index: 9999;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  .chart-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 8px;
+    letter-spacing: 2px;
+    opacity: .5;
+  }
+  .chart-top button {
+    border: 0;
+    background: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .chart-value {
+    margin-top: 8px;
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .chart-area {
+    height: 120px;
+    margin-top: 15px;
+    overflow: hidden;
+  }
+  .chart-area svg {
+    width: 100%;
+    height: 100%;
+    color: #a678ff;
+    overflow: visible;
+  }
+  #chartLine {
+    transition: all .8s ease;
+  }
+  .chart-bottom {
+    display: flex;
+    gap: 18px;
+    margin-top: 8px;
+    font-size: 8px;
+    opacity: .35;
+  }
+</style>
+<script>
+  const balanceChart = document.getElementById("balanceChart");
+  const chartLine = document.getElementById("chartLine");
+  const chartValue = document.getElementById("chartValue");
+  function openBalanceChart() {
+    balanceChart.style.display = "block";
+    updateChart();
+  }
+  function closeBalanceChart() {
+    balanceChart.style.display = "none";
+  }
+  function updateChart() {
+    const points = [];
+    let y = 60;
+    for (let x = 0; x <= 360; x += 30) {
+      y += Math.random() * 35 - 17.5;
+      y = Math.max(15, Math.min(105, y));
+      points.push(x + "," + y);
+    }
+    chartLine.setAttribute("points", points.join(" "));
+    const value = 80 + Math.random() * 520;
+    chartValue.textContent = "$" + value.toFixed(2);
+  }
+  // Нажатие на DEMO BALANCE
+  const liveBalance = document.querySelector(".live-balance");
+  if (liveBalance) {
+    liveBalance.addEventListener("click", openBalanceChart);
+  }
+  // График слегка обновляется каждые 2 секунды
+  setInterval(() => {
+    if (balanceChart.style.display === "block") {
+      updateChart();
+    }
+  }, 2000);
+</script>
