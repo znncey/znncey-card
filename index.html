@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Сейдамет Исмаилов</title>
+  <title>SEO — Сейдамет Исмаилов</title>
   <style>
     * {
       box-sizing: border-box;
@@ -12,479 +12,262 @@
     }
     body {
       min-height: 100vh;
-      background: #050505;
-      color: #f5f5f5;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 50% 0%, #3b176d 0%, #160b29 38%, #08050d 75%);
+      color: white;
       display: flex;
       justify-content: center;
-      align-items: center;
-      overflow: hidden;
+      padding: 35px 18px;
     }
-    /* Мягкое фиолетовое свечение */
-    body::before {
-      content: "";
-      position: fixed;
-      width: 420px;
-      height: 420px;
-      top: -240px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #6d28d9;
-      opacity: 0.10;
-      filter: blur(130px);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .card {
-      width: 90%;
+    .container {
+      width: 100%;
       max-width: 430px;
-      position: relative;
+      text-align: center;
     }
-    /* Верхняя часть */
-    .top {
+    .logo {
+      width: 72px;
+      height: 72px;
+      margin: 10px auto 20px;
+      border-radius: 22px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      margin-bottom: 70px;
-    }
-    .brand {
-      font-size: 11px;
-      letter-spacing: 5px;
-      color: #8f8f8f;
-    }
-    .number {
-      font-size: 10px;
-      color: #444;
+      justify-content: center;
+      background: linear-gradient(145deg, #9b5cff, #4d188c);
+      box-shadow:
+        0 0 35px rgba(155, 92, 255, 0.35),
+        inset 0 1px 1px rgba(255,255,255,0.25);
+      font-size: 22px;
+      font-weight: 700;
       letter-spacing: 2px;
-    }
-    /* Главный блок */
-    .hero {
-      margin-bottom: 55px;
-    }
-    .role {
-      font-size: 12px;
-      letter-spacing: 8px;
-      color: #a970ff;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      text-shadow: 0 0 20px rgba(160, 90, 255, 0.35);
     }
     h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 42px;
-      font-weight: 400;
-      line-height: 1.05;
-      letter-spacing: -1px;
-      margin-bottom: 22px;
-    }
-    .description {
-      color: #6f6f6f;
-      font-size: 12px;
-      letter-spacing: 2px;
-      line-height: 1.8;
-    }
-    /* Фиолетовый акцент */
-    .accent {
-      width: 42px;
-      height: 1px;
-      background: #8b5cf6;
-      margin-top: 28px;
-      box-shadow: 0 0 14px rgba(139, 92, 246, 0.65);
-    }
-    /* Контакты */
-    .contacts {
-      border-top: 1px solid #191919;
-    }
-    .contact {
-      height: 65px;
-      border-bottom: 1px solid #191919;
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: #fff;
-      transition: 0.25s ease;
-    }
-    .contact:hover {
-      padding-left: 8px;
-      border-color: #39205a;
-    }
-    .symbol {
-      width: 35px;
-      color: #9b6cff;
-      font-size: 16px;
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      margin-bottom: 6px;
     }
     .name {
-      flex: 1;
-      font-size: 13px;
-      letter-spacing: 1.5px;
-      color: #d8d8d8;
+      color: #bfa9d9;
+      font-size: 15px;
+      margin-bottom: 30px;
     }
-    .value {
-      font-size: 11px;
-      color: #555;
-      letter-spacing: 0.5px;
-    }
-    .arrow {
-      margin-left: 14px;
-      color: #7148a5;
-      font-size: 17px;
-    }
-    /* Низ */
-    .bottom {
+    .links {
       display: flex;
-      justify-content: space-between;
-      margin-top: 38px;
+      flex-direction: column;
+      gap: 12px;
     }
-    .bottom span {
-      font-size: 8px;
-      letter-spacing: 3px;
-      color: #303030;
-      text-transform: uppercase;
+    .link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 58px;
+      padding: 15px 20px;
+      color: white;
+      text-decoration: none;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(190,150,255,0.16);
+      border-radius: 17px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: 0.25s ease;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+    }
+    .link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(177,111,255,0.5);
+      background: rgba(145,78,220,0.13);
+      box-shadow: 0 10px 30px rgba(111,45,180,0.2);
+    }
+    .icon {
+      position: absolute;
+      left: 22px;
+      font-size: 20px;
+    }
+    .link-text {
+      font-size: 15px;
+      font-weight: 500;
+    }
+    /* LIVE BALANCE */
+    .balance-card {
+      margin-top: 18px;
+      padding: 22px;
+      border-radius: 22px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(146, 75, 220, 0.20),
+          rgba(255,255,255,0.045)
+        );
+      border: 1px solid rgba(190,150,255,0.22);
+      box-shadow:
+        0 15px 45px rgba(0,0,0,0.25),
+        inset 0 1px 1px rgba(255,255,255,0.08);
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .balance-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(180,120,255,0.5);
+    }
+    .balance-title {
+      color: #bfa9d9;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    .balance {
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .change {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #b98cff;
+    }
+    .chart {
+      height: 95px;
+      margin-top: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+    .chart svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+    .chart-line {
+      fill: none;
+      stroke: #a96cff;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 0 6px rgba(169,108,255,0.55));
+    }
+    .chart-area {
+      fill: url(#gradient);
+      opacity: 0.25;
+    }
+    .dot {
+      fill: #d5b5ff;
+      filter: drop-shadow(0 0 7px rgba(190,140,255,0.9));
+    }
+    .hint {
+      margin-top: 10px;
+      color: #8f7ba4;
+      font-size: 11px;
+    }
+    .footer {
+      margin-top: 30px;
+      color: #6e617b;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+    @media (max-width: 380px) {
+      h1 {
+        font-size: 27px;
+      }
+      .balance {
+        font-size: 30px;
+      }
     }
   </style>
 </head>
 <body>
-  <main class="card">
-    <div class="top">
-      <div class="brand">ZN NCEY</div>
-      <div class="number">01 / 01</div>
+  <div class="container">
+    <div class="logo">SEO</div>
+    <h1>SEO</h1>
+    <div class="name">Сейдамет Исмаилов</div>
+    <div class="links">
+      <a class="link" href="https://instagram.com/znncey" target="_blank">
+        <span class="icon">◎</span>
+        <span class="link-text">Instagram</span>
+      </a>
+      <a class="link" href="https://t.me/znncey" target="_blank">
+        <span class="icon">✈</span>
+        <span class="link-text">Telegram</span>
+      </a>
+      <a class="link" href="tel:+998200022252">
+        <span class="icon">⌕</span>
+        <span class="link-text">+998 20 002 22 52</span>
+      </a>
     </div>
-    <section class="hero">
-      <div class="role">CEO</div>
-      <h1>
-        Сейдамет<br>
-        Исмаилов
-      </h1>
-      <div class="description">
-        PERSONAL IDENTITY<br>
-        DIGITAL BUSINESS CARD
+    <div class="balance-card" onclick="updateBalance()">
+      <div class="balance-title">LIVE BALANCE</div>
+      <div class="balance" id="balance">$97.00</div>
+      <div class="change" id="change">+ $0.00 today</div>
+      <div class="chart">
+        <svg viewBox="0 0 360 100" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#a96cff"/>
+              <stop offset="100%" stop-color="#a96cff" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path
+            class="chart-area"
+            d="M0,72
+               L30,65
+               L60,70
+               L90,48
+               L120,55
+               L150,42
+               L180,50
+               L210,31
+               L240,38
+               L270,25
+               L300,35
+               L330,18
+               L360,27
+               L360,100
+               L0,100 Z">
+          </path>
+          <path
+            class="chart-line"
+            d="M0,72
+               L30,65
+               L60,70
+               L90,48
+               L120,55
+               L150,42
+               L180,50
+               L210,31
+               L240,38
+               L270,25
+               L300,35
+               L330,18
+               L360,27">
+          </path>
+          <circle
+            class="dot"
+            cx="360"
+            cy="27"
+            r="4">
+          </circle>
+        </svg>
       </div>
-      <div class="accent"></div>
-    </section>
-    <section class="contacts">
-      <a class="contact"
-         href="https://instagram.com/znncey"
-         target="_blank">
-        <div class="symbol">◎</div>
-        <div class="name">Instagram</div>
-        <div class="value">@znncey</div>
-        <div class="arrow">›</div>
-      </a>
-      <a class="contact"
-         href="https://t.me/znncey"
-         target="_blank">
-        <div class="symbol">↗</div>
-        <div class="name">Telegram</div>
-        <div class="value">@znncey</div>
-        <div class="arrow">›</div>
-      </a>
-      <a class="contact"
-        href="tel:+998200022252">
-        <div class="symbol">＋</div>
-        <div class="name">Phone</div>
-        <div class="value">+998 20 002 22 52</div>
-        <div class="arrow">›</div>
-      </a>
-    </section>
-    <div class="bottom">
-      <span>Digital Card</span>
-      <span>2026</span>
+      <div class="hint">Tap to update</div>
     </div>
-  </main>
+    <div class="footer">
+      DIGITAL IDENTITY
+    </div>
+  </div>
+  <script>
+    let balance = 97.00;
+    function updateBalance() {
+      const movement =
+        (Math.random() * 16 - 8);
+      balance += movement;
+      if (balance < 80) balance = 80;
+      if (balance > 120) balance = 120;
+      document.getElementById("balance").textContent =
+        "$" + balance.toFixed(2);
+      const change = movement >= 0
+        ? "+ $" + movement.toFixed(2) + " today"
+        : "- $" + Math.abs(movement).toFixed(2) + " today";
+      document.getElementById("change").textContent = change;
+    }
+  </script>
 </body>
 </html>
-<div class="live-balance">
-  <div class="balance-label">DEMO BALANCE</div>
-  <div id="balance">$247.38</div>
-</div>
-<style>
-  .live-balance {
-    text-align: center;
-    margin: 10px auto;
-    font-family: Arial, sans-serif;
-  }
-  .balance-label {
-    font-size: 7px;
-    letter-spacing: 1.8px;
-    opacity: 0.4;
-    margin-bottom: 3px;
-  }
-  #balance {
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: -0.3px;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-  }
-  #balance.changing {
-    opacity: 0.45;
-    transform: scale(0.98);
-  }
-</style>
-<script>
-  const balance = document.getElementById("balance");
-  let amount = 247.38;
-  function updateBalance() {
-    balance.classList.add("changing");
-    setTimeout(() => {
-      // Небольшое изменение вверх или вниз
-      const change = Math.random() * 8 - 4;
-      amount += change;
-      // Диапазон от $80 до $600
-      amount = Math.max(80, Math.min(600, amount));
-      balance.textContent = "$" + amount.toFixed(2);
-      balance.classList.remove("changing");
-    }, 200);
-  }
-  // Обновление каждую секунду
-  setInterval(updateBalance, 1000);
-</script>
-<!-- DEMO TRADING CHART -->
-<div id="tradingChart" class="trading-chart">
-  <div class="chart-header">
-    <span>DEMO MARKET</span>
-    <button onclick="closeChart()">×</button>
-  </div>
-  <div class="chart-price" id="chartPrice">$247.38</div>
-  <div class="candles" id="candles"></div>
-  <div class="chart-footer">
-    <span>1H</span>
-    <span>4H</span>
-    <span>1D</span>
-  </div>
-</div>
-<style>
-  .trading-chart {
-    display: none;
-    position: fixed;
-    left: 50%;
-    bottom: 25px;
-    transform: translateX(-50%);
-    width: calc(100% - 40px);
-    max-width: 390px;
-    padding: 18px;
-    border-radius: 20px;
-    background: #101014;
-    border: 1px solid rgba(255,255,255,.12);
-    box-shadow: 0 20px 70px rgba(0,0,0,.55);
-    z-index: 9999;
-    animation: chartIn .25s ease;
-  }
-  @keyframes chartIn {
-    from {
-      opacity: 0;
-      transform: translate(-50%, 15px);
-    }
-    to {
-      opacity: 1;
-      transform: translate(-50%, 0);
-    }
-  }
-  .chart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: rgba(255,255,255,.55);
-    font-size: 9px;
-    letter-spacing: 2px;
-  }
-  .chart-header button {
-    border: 0;
-    background: transparent;
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-  }
-  .chart-price {
-    margin-top: 10px;
-    font-size: 25px;
-    font-weight: 500;
-  }
-  .candles {
-    height: 145px;
-    margin-top: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 5px;
-    overflow: hidden;
-  }
-  .candle {
-    position: relative;
-    width: 7px;
-    height: 35px;
-    border-radius: 2px;
-  }
-  .candle::before {
-    content: "";
-    position: absolute;
-    width: 1px;
-    height: 100%;
-    left: 3px;
-    top: -15px;
-    background: currentColor;
-  }
-  .green {
-    background: #54d68b;
-    color: #54d68b;
-  }
-  .red {
-    background: #e96b78;
-    color: #e96b78;
-  }
-  .chart-footer {
-    display: flex;
-    gap: 18px;
-    margin-top: 12px;
-    font-size: 9px;
-    opacity: .4;
-  }
-</style>
-<script>
-  const tradingChart = document.getElementById("tradingChart");
-  const chartPrice = document.getElementById("chartPrice");
-  const candles = document.getElementById("candles");
-  function openChart() {
-    tradingChart.style.display = "block";
-    createCandles();
-  }
-  function closeChart() {
-    tradingChart.style.display = "none";
-  }
-  function createCandles() {
-    candles.innerHTML = "";
-    for (let i = 0; i < 32; i++) {
-      const candle = document.createElement("div");
-      candle.className =
-        "candle " + (Math.random() > 0.5 ? "green" : "red");
-      const height = 20 + Math.random() * 65;
-      candle.style.height = height + "px";
-      candles.appendChild(candle);
-    }
-    chartPrice.textContent =
-      "$" + (80 + Math.random() * 520).toFixed(2);
-  }
-  // Нажатие на DEMO BALANCE
-  document.querySelector(".live-balance")
-    .addEventListener("click", openChart);
-</script>
-<!-- График DEMO BALANCE -->
-<div id="balanceChart" class="balance-chart">
-  <div class="chart-top">
-    <span>DEMO BALANCE</span>
-    <button onclick="closeBalanceChart()">×</button>
-  </div>
-  <div class="chart-value" id="chartValue">$247.38</div>
-  <div class="chart-area">
-    <svg viewBox="0 0 360 120" preserveAspectRatio="none">
-      <polyline
-        id="chartLine"
-        points="0,85 30,70 60,78 90,48 120,60 150,35 180,50 210,25 240,42 270,30 300,45 330,20 360,32"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-    </svg>
-  </div>
-  <div class="chart-bottom">
-    <span>1H</span>
-    <span>4H</span>
-    <span>1D</span>
-  </div>
-</div>
-<style>
-  .balance-chart {
-    display: none;
-    position: fixed;
-    left: 50%;
-    bottom: 25px;
-    transform: translateX(-50%);
-    width: calc(100% - 40px);
-    max-width: 380px;
-    padding: 16px;
-    border-radius: 18px;
-    background: #101014;
-    border: 1px solid rgba(255,255,255,.10);
-    box-shadow: 0 20px 60px rgba(0,0,0,.55);
-    z-index: 9999;
-    color: white;
-    font-family: Arial, sans-serif;
-  }
-  .chart-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 8px;
-    letter-spacing: 2px;
-    opacity: .5;
-  }
-  .chart-top button {
-    border: 0;
-    background: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  .chart-value {
-    margin-top: 8px;
-    font-size: 22px;
-    font-weight: 500;
-  }
-  .chart-area {
-    height: 120px;
-    margin-top: 15px;
-    overflow: hidden;
-  }
-  .chart-area svg {
-    width: 100%;
-    height: 100%;
-    color: #a678ff;
-    overflow: visible;
-  }
-  #chartLine {
-    transition: all .8s ease;
-  }
-  .chart-bottom {
-    display: flex;
-    gap: 18px;
-    margin-top: 8px;
-    font-size: 8px;
-    opacity: .35;
-  }
-</style>
-<script>
-  const balanceChart = document.getElementById("balanceChart");
-  const chartLine = document.getElementById("chartLine");
-  const chartValue = document.getElementById("chartValue");
-  function openBalanceChart() {
-    balanceChart.style.display = "block";
-    updateChart();
-  }
-  function closeBalanceChart() {
-    balanceChart.style.display = "none";
-  }
-  function updateChart() {
-    const points = [];
-    let y = 60;
-    for (let x = 0; x <= 360; x += 30) {
-      y += Math.random() * 35 - 17.5;
-      y = Math.max(15, Math.min(105, y));
-      points.push(x + "," + y);
-    }
-    chartLine.setAttribute("points", points.join(" "));
-    const value = 80 + Math.random() * 520;
-    chartValue.textContent = "$" + value.toFixed(2);
-  }
-  // Нажатие на DEMO BALANCE
-  const liveBalance = document.querySelector(".live-balance");
-  if (liveBalance) {
-    liveBalance.addEventListener("click", openBalanceChart);
-  }
-  // График слегка обновляется каждые 2 секунды
-  setInterval(() => {
-    if (balanceChart.style.display === "block") {
-      updateChart();
-    }
-  }, 2000);
-</script>
