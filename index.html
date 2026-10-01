@@ -3,175 +3,244 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Сейдамет Исмаилов — SEO</title>
-
+  <title>Сейдамет Исмаилов</title>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     body {
       min-height: 100vh;
+      background: #050505;
+      color: #f5f5f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #0b0b0f;
-      color: #ffffff;
-      font-family: Arial, sans-serif;
       overflow: hidden;
     }
-
+    /* Мягкое фиолетовое свечение */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      top: -240px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #6d28d9;
+      opacity: 0.10;
+      filter: blur(130px);
+      border-radius: 50%;
+      pointer-events: none;
+    }
     .card {
-      width: 100%;
-      max-width: 420px;
-      min-height: 100vh;
-      padding: 50px 25px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background:
-        radial-gradient(circle at 50% 20%, rgba(125, 70, 255, 0.18), transparent 35%),
-        #0b0b0f;
+      width: 90%;
+      max-width: 430px;
+      position: relative;
     }
-
-    .logo {
-      width: 72px;
-      height: 72px;
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 50%;
+    /* Верхняя часть */
+    .top {
       display: flex;
-      justify-content: center;
       align-items: center;
-      margin-bottom: 28px;
-      font-size: 24px;
-      font-weight: 600;
-      letter-spacing: -2px;
-      background: rgba(255,255,255,0.03);
-      box-shadow: 0 0 35px rgba(130, 80, 255, 0.15);
+      justify-content: space-between;
+      margin-bottom: 70px;
     }
-
-    .seo {
-      color: #a678ff;
-      font-size: 13px;
+    .brand {
+      font-size: 11px;
       letter-spacing: 5px;
-      font-weight: 600;
-      margin-bottom: 12px;
+      color: #8f8f8f;
     }
-
+    .number {
+      font-size: 10px;
+      color: #444;
+      letter-spacing: 2px;
+    }
+    /* Главный блок */
+    .hero {
+      margin-bottom: 55px;
+    }
+    .role {
+      font-size: 12px;
+      letter-spacing: 8px;
+      color: #a970ff;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      text-shadow: 0 0 20px rgba(160, 90, 255, 0.35);
+    }
     h1 {
-      font-size: 30px;
-      font-weight: 500;
-      letter-spacing: -0.5px;
-      margin-bottom: 35px;
-    }
-
-    .balance-box {
-      width: 100%;
-      padding: 22px 20px;
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 18px;
-      background: rgba(255,255,255,0.035);
-      box-shadow: 0 15px 50px rgba(0,0,0,0.25);
-    }
-
-    .balance-label {
-      font-size: 10px;
-      letter-spacing: 3px;
-      opacity: 0.45;
-      margin-bottom: 8px;
-    }
-
-    #balance {
-      font-size: 38px;
-      font-weight: 600;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 400;
+      line-height: 1.05;
       letter-spacing: -1px;
-      transition: opacity 0.25s ease, transform 0.25s ease;
+      margin-bottom: 22px;
     }
-
-    #balance.changing {
-      opacity: 0.35;
-      transform: scale(0.96);
-    }
-
-    .live {
-      margin-top: 10px;
-      font-size: 9px;
+    .description {
+      color: #6f6f6f;
+      font-size: 12px;
       letter-spacing: 2px;
-      opacity: 0.35;
+      line-height: 1.8;
     }
-
-    .dot {
-      display: inline-block;
-      width: 5px;
-      height: 5px;
-      background: #a678ff;
-      border-radius: 50%;
-      margin-right: 5px;
-      vertical-align: middle;
-      box-shadow: 0 0 8px #a678ff;
+    /* Фиолетовый акцент */
+    .accent {
+      width: 42px;
+      height: 1px;
+      background: #8b5cf6;
+      margin-top: 28px;
+      box-shadow: 0 0 14px rgba(139, 92, 246, 0.65);
     }
-
-    .footer {
-      position: absolute;
-      bottom: 25px;
-      font-size: 10px;
-      opacity: 0.25;
-      letter-spacing: 2px;
+    /* Контакты */
+    .contacts {
+      border-top: 1px solid #191919;
+    }
+    .contact {
+      height: 65px;
+      border-bottom: 1px solid #191919;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+      transition: 0.25s ease;
+    }
+    .contact:hover {
+      padding-left: 8px;
+      border-color: #39205a;
+    }
+    .symbol {
+      width: 35px;
+      color: #9b6cff;
+      font-size: 16px;
+    }
+    .name {
+      flex: 1;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      color: #d8d8d8;
+    }
+    .value {
+      font-size: 11px;
+      color: #555;
+      letter-spacing: 0.5px;
+    }
+    .arrow {
+      margin-left: 14px;
+      color: #7148a5;
+      font-size: 17px;
+    }
+    /* Низ */
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 38px;
+    }
+    .bottom span {
+      font-size: 8px;
+      letter-spacing: 3px;
+      color: #303030;
+      text-transform: uppercase;
     }
   </style>
 </head>
-
 <body>
-
   <main class="card">
-
-    <div class="logo">S·C</div>
-
-    <div class="seo">SEO</div>
-
-    <h1>Сейдамет Исмаилов</h1>
-
-    <div class="balance-box">
-      <div class="balance-label">BALANCE</div>
-
-      <div id="balance">$97.00</div>
-
-      <div class="live">
-        <span class="dot"></span>LIVE
+    <div class="top">
+      <div class="brand">ZN NCEY</div>
+      <div class="number">01 / 01</div>
+    </div>
+    <section class="hero">
+      <div class="role">CEO</div>
+      <h1>
+        Сейдамет<br>
+        Исмаилов
+      </h1>
+      <div class="description">
+        PERSONAL IDENTITY<br>
+        DIGITAL BUSINESS CARD
       </div>
+      <div class="accent"></div>
+    </section>
+    <section class="contacts">
+      <a class="contact"
+         href="https://instagram.com/znncey"
+         target="_blank">
+        <div class="symbol">◎</div>
+        <div class="name">Instagram</div>
+        <div class="value">@znncey</div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="contact"
+         href="https://t.me/znncey"
+         target="_blank">
+        <div class="symbol">↗</div>
+        <div class="name">Telegram</div>
+        <div class="value">@znncey</div>
+        <div class="arrow">›</div>
+      </a>
+      <a class="contact"
+        href="tel:+998200022252">
+        <div class="symbol">＋</div>
+        <div class="name">Phone</div>
+        <div class="value">+998 20 002 22 52</div>
+        <div class="arrow">›</div>
+      </a>
+    </section>
+    <div class="bottom">
+      <span>Digital Card</span>
+      <span>2026</span>
     </div>
-
-    <div class="footer">
-      ZNNCEY
-    </div>
-
   </main>
-
-  <script>
-    const balance = document.getElementById("balance");
-
-    function updateBalance() {
-      balance.classList.add("changing");
-
-      setTimeout(() => {
-
-        // Случайная сумма от $80 до $120
-        const amount = 80 + Math.random() * 40;
-
-        balance.textContent = "$" + amount.toFixed(2);
-
-        balance.classList.remove("changing");
-
-      }, 250);
-    }
-
-    // Обновление каждую секунду
-    setInterval(updateBalance, 1000);
-  </script>
-
 </body>
 </html>
+<div class="live-balance">
+  <div class="balance-label">LIVE BALANCE</div>
+  <div id="balance">$97.00</div>
+</div>
+
+<style>
+  .live-balance {
+    text-align: center;
+    margin: 25px auto;
+    font-family: Arial, sans-serif;
+  }
+
+  .balance-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    opacity: 0.55;
+    margin-bottom: 6px;
+  }
+
+  #balance {
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  #balance.changing {
+    opacity: 0.35;
+    transform: scale(0.97);
+  }
+</style>
+
+<script>
+  const balance = document.getElementById("balance");
+
+  function updateBalance() {
+    balance.classList.add("changing");
+
+    setTimeout(() => {
+      // Случайная сумма от $80 до $120
+      const amount = 80 + Math.random() * 40;
+
+      balance.textContent = "$" + amount.toFixed(2);
+
+      balance.classList.remove("changing");
+    }, 250);
+  }
+
+  // Меняет сумму каждую секунду
+  setInterval(updateBalance, 1000);
+</script>
