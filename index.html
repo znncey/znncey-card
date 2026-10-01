@@ -238,3 +238,132 @@
   // Обновление каждую секунду
   setInterval(updateBalance, 1000);
 </script>
+<!-- DEMO TRADING CHART -->
+<div id="tradingChart" class="trading-chart">
+  <div class="chart-header">
+    <span>DEMO MARKET</span>
+    <button onclick="closeChart()">×</button>
+  </div>
+  <div class="chart-price" id="chartPrice">$247.38</div>
+  <div class="candles" id="candles"></div>
+  <div class="chart-footer">
+    <span>1H</span>
+    <span>4H</span>
+    <span>1D</span>
+  </div>
+</div>
+<style>
+  .trading-chart {
+    display: none;
+    position: fixed;
+    left: 50%;
+    bottom: 25px;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 390px;
+    padding: 18px;
+    border-radius: 20px;
+    background: #101014;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow: 0 20px 70px rgba(0,0,0,.55);
+    z-index: 9999;
+    animation: chartIn .25s ease;
+  }
+  @keyframes chartIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, 15px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+  .chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255,255,255,.55);
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+  .chart-header button {
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  .chart-price {
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: 500;
+  }
+  .candles {
+    height: 145px;
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    overflow: hidden;
+  }
+  .candle {
+    position: relative;
+    width: 7px;
+    height: 35px;
+    border-radius: 2px;
+  }
+  .candle::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    left: 3px;
+    top: -15px;
+    background: currentColor;
+  }
+  .green {
+    background: #54d68b;
+    color: #54d68b;
+  }
+  .red {
+    background: #e96b78;
+    color: #e96b78;
+  }
+  .chart-footer {
+    display: flex;
+    gap: 18px;
+    margin-top: 12px;
+    font-size: 9px;
+    opacity: .4;
+  }
+</style>
+<script>
+  const tradingChart = document.getElementById("tradingChart");
+  const chartPrice = document.getElementById("chartPrice");
+  const candles = document.getElementById("candles");
+  function openChart() {
+    tradingChart.style.display = "block";
+    createCandles();
+  }
+  function closeChart() {
+    tradingChart.style.display = "none";
+  }
+  function createCandles() {
+    candles.innerHTML = "";
+    for (let i = 0; i < 32; i++) {
+      const candle = document.createElement("div");
+      candle.className =
+        "candle " + (Math.random() > 0.5 ? "green" : "red");
+      const height = 20 + Math.random() * 65;
+      candle.style.height = height + "px";
+      candles.appendChild(candle);
+    }
+    chartPrice.textContent =
+      "$" + (80 + Math.random() * 520).toFixed(2);
+  }
+  // Нажатие на DEMO BALANCE
+  document.querySelector(".live-balance")
+    .addEventListener("click", openChart);
+</script>
